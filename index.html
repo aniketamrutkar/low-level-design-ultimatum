@@ -353,6 +353,11 @@
     </div>
     
     <script>
+        // If opened via file:// at repo root, redirect to generated site
+        if (window.location.protocol === 'file:' && !window.location.pathname.includes('/_site/')) {
+            window.location.href = './_site/index.html';
+        }
+
         // Display last update time
         const lastUpdate = new Date().toLocaleString();
         document.getElementById('lastUpdate').textContent = lastUpdate;

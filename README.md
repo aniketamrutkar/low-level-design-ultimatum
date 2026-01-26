@@ -130,6 +130,26 @@ A: Composition is generally preferred ("composition over inheritance"). Inherita
 4. **Reference Company Tagged/** for company-specific insights
 5. Use code examples as starting points for practice programs and interview prep
 
+## 🧱 Build the static site (optional)
+
+The repo includes `build_site.py`, a simple static site generator that converts the markdown content into HTML under `_site/`.
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+python3 build_site.py
+```
+
+Output will be written to the `_site/` directory.
+
+If you prefer Homebrew-managed packages instead of a virtualenv, you can also do:
+
+```bash
+brew install python-markdown pygments
+python3 build_site.py
+```
+
 **Tips for Interview Success**:
 - Understand the "why" behind each principle
 - Practice explaining trade-offs concisely

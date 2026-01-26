@@ -7,10 +7,20 @@ Converts markdown files to HTML with navigation
 import os
 import sys
 from pathlib import Path
-import markdown
 import json
 from datetime import datetime
 from urllib.parse import quote
+
+try:
+    import markdown
+except ModuleNotFoundError:
+    print(
+        "Missing dependency: 'markdown'\n\n"
+        "Install requirements and re-run:\n"
+        "  python3 -m pip install -r requirements.txt\n"
+        "  python3 build_site.py\n"
+    )
+    raise SystemExit(1)
 
 class SiteGenerator:
     def __init__(self, root_dir, output_dir="_site"):
